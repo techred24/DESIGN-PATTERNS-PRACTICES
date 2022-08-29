@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategy</title>
+</head>
+<body>
+    <input type="radio" name="card" value="MasterCard" onclick="doTestPay(this)">
+    <img src="images/mastercard.jpg">
+    <input type="radio" name="card" value="VisaCard" onclick="doTestPay(this)">
+    <img src="images/visacard.jpg">
+    <input type="radio" name="card" value="Paypal" onclick="doTestPay(this)">
+    <img src="images/paypal.jpg">
+    <br>
+    <span id="result"></span>
+    <script src="strategy.js"></script>
+</body>
+</html>
