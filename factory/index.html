@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factory</title>
+    <style>
+        #myCanvas {
+            border: 1px solid #c3c3c3;
+        }
+    </style>
+</head>
+<body>
+    <input type="radio" name="shape" value="Rectangle" onclick="doCreate(this)">Rectangle
+    <input type="radio" name="shape" value="Square" onclick="doCreate(this)">Square
+    <input type="radio" name="shape" value="Round" onclick="doCreate(this)">Round
+
+    <br><br>
+    <canvas id="myCanvas" width="500" height="200"></canvas>
+
+    <script src="factory.js"></script>
+</body>
+</html>
