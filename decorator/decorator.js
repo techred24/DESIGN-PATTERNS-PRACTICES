@@ -96,8 +96,8 @@ planeImage.onload = function () {
 let bullet = null;
 let bulletImage = null;
 function initBulletPosition() {
-    bullet.setX(plane.getX() + plane.getImage().width/2 - bullet.getImage().width/2);
-    bullet.setY(plane.getY);
+    bullet.setX(110);
+    bullet.setY(125);
 }
 
 function createBullet() {
@@ -115,13 +115,13 @@ let bulletDecorator = null;
 let bulletDecoratorImage = null;
 
 function initDecoratorBulletPosition() {
-    bulletDecorator.setX(plane.getX() + plane.getImage().width/2 - bulletDecorator.getImage().width/2);
-    bulletDecorator.setY(plane.getY() + plane.getImage().height);
+    bulletDecorator.setX(110);
+    bulletDecorator.setY(125);
 }
 
 function createDecoratorBullet() {
     bulletDecoratorImage = new Image();
-    bulletDecoratorImage.src = 'bullet2.png';
+    bulletDecoratorImage.src = 'bullet.png';
     bulletDecorator = new BulletDecorator(bullet);
     bulletDecorator.setImage(bulletDecoratorImage);
     bulletDecoratorImage.onload = function () {
