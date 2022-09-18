@@ -85,7 +85,7 @@ let bulletType = 1;
 
 let plane = new Plane();
 let planeImage = new Image();
-planeImage.src = 'https://freesvg.org/img/plane-red.png';
+planeImage.src = 'avion.png';
 plane.setImage(planeImage);
 planeImage.onload = function () {
     plane.setX(110);
