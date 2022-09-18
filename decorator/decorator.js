@@ -96,8 +96,8 @@ planeImage.onload = function () {
 let bullet = null;
 let bulletImage = null;
 function initBulletPosition() {
-    bullet.setX(110);
-    bullet.setY(125);
+    bullet.setX(plane.getX() + plane.getImage().width/2 - bullet.getImage().width/2);
+    bullet.setY(plane.getY());
 }
 
 function createBullet() {
@@ -115,8 +115,8 @@ let bulletDecorator = null;
 let bulletDecoratorImage = null;
 
 function initDecoratorBulletPosition() {
-    bulletDecorator.setX(110);
-    bulletDecorator.setY(125);
+    bulletDecorator.setX(plane.getX() + plane.getImage().width/2 - bulletDecorator.getImage().width/2);
+    bulletDecorator.setY(plane.getY());
 }
 
 function createDecoratorBullet() {
