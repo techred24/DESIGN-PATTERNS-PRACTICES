@@ -121,7 +121,7 @@ function initDecoratorBulletPosition() {
 
 function createDecoratorBullet() {
     bulletDecoratorImage = new Image();
-    bulletDecoratorImage.src = 'bullet.png';
+    bulletDecoratorImage.src = 'bullet2.png';
     bulletDecorator = new BulletDecorator(bullet);
     bulletDecorator.setImage(bulletDecoratorImage);
     bulletDecoratorImage.onload = function () {
