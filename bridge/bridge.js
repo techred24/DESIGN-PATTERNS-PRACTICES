@@ -94,3 +94,80 @@ let canvasHeight = 300;
 
 let redFlyBulletType = 1;
 let blueFlyBulletType = 2;
+
+let redFly = new RedFly();
+let redFlyImage = new Image();
+
+redFlyImage.src = 'avion.png';
+redFly.setImage(redFlyImage);
+redFlyImage.onload = function () {
+    redFly.setX(50);
+    redFly.setY(250);
+};
+
+let redBullet = null;
+let redBulletImage = null;
+function initRedBulletPosition(fly) {
+    redBullet.setX(fly.getX() + fly.getImage().width/2 - redBullet.getImage().width/2);
+    redBullet.setY(fly.getY());
+}
+
+function createRedBullet(fly) {
+    redBulletImage = new Image();
+    redBulletImage.src = 'avion.png';
+    redBullet = new RedBullet();
+    redBullet.setImage(redBulletImage);
+    redBulletImage.onload = function () {
+        initRedBulletPosition(fly);
+    };
+    fly.loadBullet(redBullet);
+}
+
+let blueFly = new BlueFly();
+let blueFlyImage = new Image();
+blueFlyImage.src = 'avion.png';
+blueFly.setImage(blueFlyImage);
+blueFlyImage.onload = function () {
+    blueFly.setX(200);
+    blueFly.setY(250);
+}
+
+let laserBullet = null;
+let laserBulletImage = null;
+
+function initLaserBulletPosition(fly) {
+    laserBullet.setX(fly.getX() + fly.getImage().width/2 - laserBullet.getImage().width/2);
+    laserBullet.setY(fly.getY());
+}
+
+function createLaserBullet(fly) {
+    laserBulletImage = new Image();
+    laserBulletImage.src = 'avion.png';
+    laserBullet = new LaserBullet();
+    laserBullet.setImage(laserBulletImage);
+    laserBulletImage.onload = function () {
+        initLaserBulletPosition(fly);
+    };
+    fly.loadBullet(laserBullet);
+}
+createRedBullet(blueFly);
+createLaserBullet(redFly);
+
+function redraw (context) {
+    context.fillRect(0,0, canvasWidth, canvasHeight);
+    redFly.draw(context);
+    blueFly.draw(context);
+
+    if (redBullet.getY() <= 0) {
+        initRedBulletPosition(blueFly);
+    }
+    if (laserBullet.getY() <= 0) {
+        initLaserBulletPosition(redFly);
+    }
+}
+setInterval(
+    function () {
+        redraw(context);
+    },
+    200
+)
